@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Preparation of DB
+```
+bundle exec rake db:create db:migrate db:seed
+```
 
-Things you may want to cover:
+## Running Server in local
 
-* Ruby version
+### Option1. Run Web Server and BackendAPI Server in one command
+```
+rake start
+```
 
-* System dependencies
+### Option2. Run Each Server 
+```
+# BackendAPI Server
+bundle exec rails s -p 3001
+# Web (Client) Server
+cd client && npm start
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+--- 
+## Structure
+localhost:3000      -- Web
+localhost:3001/api/ -- API
